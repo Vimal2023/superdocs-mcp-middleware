@@ -15,7 +15,7 @@ interface GenerateReportResponse {
   report: string;
 }
 
-const API_URL = "http://127.0.0.1:8000/api/generate-report";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/generate-report`;
 
 const PLACEHOLDER = `Paste your raw notes here…
 
@@ -98,7 +98,7 @@ function ReportViewer({ content }: { content: string }) {
   );
 }
 
-const EXPORT_PDF_URL = "http://127.0.0.1:8000/api/export-pdf";
+const EXPORT_PDF_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/export-pdf`;
 
 export default function Page() {
   const [rawText, setRawText] = useState<string>("");
